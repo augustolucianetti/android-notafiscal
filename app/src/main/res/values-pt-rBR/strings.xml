@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NotaFiscalApplication</string>
+    <string name="password">Senha</string>
+    <string name="ainda_n_o_tem_conta_crie_uma">Ainda não tem conta? Creie uma!</string>
+</resources>

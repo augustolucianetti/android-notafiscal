@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NotaFiscalApplication</string>
+    <string name="password">Password</string>
+    <string name="ainda_n_o_tem_conta_crie_uma">Have an account? Create one!</string>
+</resources>
