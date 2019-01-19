@@ -1,0 +1,99 @@
+{
+  "project_info": {
+    "project_number": "884730047909",
+    "firebase_url": "https://notafiscal-4995e.firebaseio.com",
+    "project_id": "notafiscal-4995e",
+    "storage_bucket": "notafiscal-4995e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884730047909:android:b154a3689bddf7a1",
+        "android_client_info": {
+          "package_name": "br.com.augustolucianetti.calculaflex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884730047909-4k3ikejc7tkavtq6pnch4vfj3jd9obj9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.augustolucianetti.calculaflex",
+            "certificate_hash": "a84df267f25cc4b3c54e7095044449c6a0f922ec"
+          }
+        },
+        {
+          "client_id": "884730047909-6gmpg8ps4n9rb8kg8rom2pbbtio7cmot.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBj6XawwPk4bMyfjA0YwSc-223VZyW1CKc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884730047909-6gmpg8ps4n9rb8kg8rom2pbbtio7cmot.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884730047909:android:86794b1d000c7bdc",
+        "android_client_info": {
+          "package_name": "br.com.augustolucianetti.notaFiscal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884730047909-68lghue5cg6ur9dtlademkffh3ioo3uh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.augustolucianetti.notaFiscal",
+            "certificate_hash": "a84df267f25cc4b3c54e7095044449c6a0f922ec"
+          }
+        },
+        {
+          "client_id": "884730047909-6gmpg8ps4n9rb8kg8rom2pbbtio7cmot.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBj6XawwPk4bMyfjA0YwSc-223VZyW1CKc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884730047909-6gmpg8ps4n9rb8kg8rom2pbbtio7cmot.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
