@@ -50,6 +50,7 @@ class SignupActivity : AppCompatActivity() {
                         setResult(Activity.RESULT_OK, intent)
                         finish()
                     } else {
+                        System.out.println("erro no firebase: " + it.exception)
                         Toast.makeText(this@SignupActivity,
                                 it.exception?.message, Toast.LENGTH_SHORT).show()
                     }

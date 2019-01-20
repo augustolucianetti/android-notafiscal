@@ -7,4 +7,72 @@
         android:layout_height="match_parent"
         tools:context="augustolucianetti.com.br.notafiscalapplication.FormActivity">
 
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/etNumero"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:hint="@string/numero_nota"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/etProduto"
+            app:layout_constraintTop_toBottomOf="@+id/etNumero"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:hint="@string/nome_produto"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/etQuanidade"
+            app:layout_constraintTop_toBottomOf="@+id/etProduto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:hint="@string/quantidade"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/etValor"
+            app:layout_constraintTop_toBottomOf="@+id/etQuanidade"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:hint="@string/valor"/>
+    <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/etFornecedorCliente"
+            app:layout_constraintTop_toBottomOf="@+id/etValor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:hint="@string/cnpj_fornecedor_cliente"/>
+    <RadioGroup
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            app:layout_constraintTop_toBottomOf="@+id/etFornecedorCliente" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/radioGroup">
+        <RadioButton
+                android:text="@string/entrada"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content" android:id="@+id/rbEntrada" android:layout_weight="1"/>
+        <RadioButton
+                android:text="@string/saida"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/rbSaida" android:layout_weight="1"/>
+    </RadioGroup>
+    <Button
+            android:text="@string/cadstrar_nf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnCadastrarNota" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/radioGroup"/>
 </android.support.constraint.ConstraintLayout>
