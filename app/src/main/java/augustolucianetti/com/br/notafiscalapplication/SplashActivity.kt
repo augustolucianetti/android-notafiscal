@@ -1,6 +1,8 @@
 package augustolucianetti.com.br.notafiscalapplication
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -14,10 +16,31 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
-        carregar()
+
+        val preferences = getSharedPreferences("userPreferences", Context.MODE_PRIVATE)
+        val isFirstOpen = preferences.getBoolean("openFirst", true)
+
+        if (isFirstOpen) {
+            showLogin()
+        } else {
+            markAlreadyOpen(preferences)
+            showSplash()
+        }
     }
 
-    private fun carregar() {
+    private fun markAlreadyOpen(preferences: SharedPreferences) {
+        val editor = preferences.edit()
+        editor.putBoolean("openFirst", false)
+        editor.apply()
+    }
+
+    private fun showLogin() {
+        val nextStep = Intent(this@SplashActivity, LoginActivity::class.java)
+        startActivity(nextStep)
+        finish()
+    }
+
+    private fun showSplash() {
 //Carrega a animacao
         val anim = AnimationUtils.loadAnimation(this, R.anim.animacao_splash)
         anim.reset()
