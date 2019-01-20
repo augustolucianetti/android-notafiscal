@@ -10,7 +10,7 @@
     <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:ems="10"
             android:id="@+id/etNumero"
             app:layout_constraintTop_toTopOf="parent"

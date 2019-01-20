@@ -26,7 +26,7 @@ class FormActivity : AppCompatActivity() {
 
     private fun saveInDatabase() {
         val nota = NotaFiscal( etNumero.getValue().toInt(), etProduto.getValue(), etQuanidade.getValue().toFloat(),
-            etValor.getValue().toFloat(), rbEntrada.isActivated, rbSaida.isActivated)
+            etValor.getValue().toFloat(), rbEntrada.isSelected, rbSaida.isSelected)
         FirebaseDatabase.getInstance()
             .getReference("notaFiscal")
             .child(FirebaseAuth.getInstance().currentUser!!.uid)
