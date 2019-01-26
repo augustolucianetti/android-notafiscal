@@ -15,5 +15,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, FormActivity::class.java)
             startActivity(intent)
         }
+
+        btnListar.setOnClickListener {
+            val intent = Intent( this, ListActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

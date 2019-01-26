@@ -26,10 +26,11 @@ class FormActivity : AppCompatActivity() {
 
     private fun saveInDatabase() {
         val nota = NotaFiscal( etNumero.getValue().toInt(), etProduto.getValue(), etQuanidade.getValue().toFloat(),
-            etValor.getValue().toFloat(), rbEntrada.isSelected, rbSaida.isSelected)
+            etValor.getValue().toFloat(), rbEntrada.isSelected, rbSaida.isSelected,
+            FirebaseDatabase.getInstance().getReference("notaFiscal").push().key.toString())
         FirebaseDatabase.getInstance()
             .getReference("notaFiscal")
-            .child(FirebaseAuth.getInstance().currentUser!!.uid)
+            .child(FirebaseDatabase.getInstance().getReference("notaFiscal").push().key.toString())
             .setValue(nota)
             .addOnCompleteListener {
 
