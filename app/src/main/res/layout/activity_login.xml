@@ -42,6 +42,10 @@
                       android:hint="Password"/>
         </android.support.design.widget.TextInputLayout>
 
+        <CheckBox
+                android:text="Manteha-me conectado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/cbManterConectado"/>
         <android.support.v7.widget.AppCompatButton
                 android:id="@+id/btLogin"
                 android:layout_width="match_parent"

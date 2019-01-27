@@ -18,14 +18,7 @@ class SplashActivity : AppCompatActivity() {
         setContentView(R.layout.activity_splash)
 
         val preferences = getSharedPreferences("userPreferences", Context.MODE_PRIVATE)
-        val isFirstOpen = preferences.getBoolean("openFirst", true)
-
-        if (isFirstOpen) {
-            markAlreadyOpen(preferences)
-            showSplash()
-        } else {
-            showLogin()
-        }
+        showSplash()
     }
 
     private fun markAlreadyOpen(preferences: SharedPreferences) {

@@ -20,8 +20,10 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        val preferences = getSharedPreferences("manterConectado", Context.MODE_PRIVATE)
         myAuth = FirebaseAuth.getInstance()
-        if (myAuth.currentUser != null){
+        val manterConectado = preferences.getBoolean("manterConectado", false)
+        if (manterConectado) {
             goHome()
         }
 
@@ -30,6 +32,14 @@ class LoginActivity : AppCompatActivity() {
                 inputLoginEmail.getValue(),
                 inputLoginPassword.getValue()
             ).addOnCompleteListener {
+
+                val preferences = getSharedPreferences("manterConectado", Context.MODE_PRIVATE)
+                if(cbManterConectado.isChecked) {
+                    val editor = preferences.edit()
+                    editor.putBoolean("manterConectado", true)
+                    editor.apply()
+                }
+
                 if (it.isSuccessful) {
                     goHome()
                 } else {
