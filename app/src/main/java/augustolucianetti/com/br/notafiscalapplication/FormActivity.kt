@@ -22,12 +22,12 @@ class FormActivity : AppCompatActivity() {
     }
 
     private fun saveInDatabase() {
+        val key = FirebaseDatabase.getInstance().getReference("notaFiscal").push().key.toString()
         val nota = NotaFiscal( etNumeroEdit.getValue().toInt(), etProdutoEdit.getValue(), etQuanidadeEdit.getValue().toFloat(),
-            etValorEdit.getValue().toFloat(), rbEntradaEdit.isSelected, rbSaidaEdit.isSelected,
-            FirebaseDatabase.getInstance().getReference("notaFiscal").push().key.toString())
+            etValorEdit.getValue().toFloat(), rbEntradaEdit.isChecked, rbSaidaEdit.isChecked, key)
         FirebaseDatabase.getInstance()
             .getReference("notaFiscal")
-            .child(FirebaseDatabase.getInstance().getReference("notaFiscal").push().key.toString())
+            .child(key)
             .setValue(nota)
             .addOnCompleteListener {
 
