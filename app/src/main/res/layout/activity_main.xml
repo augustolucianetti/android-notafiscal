@@ -12,16 +12,10 @@
 
             android:id="@+id/btnCadastrar"
             style="@style/button"
-            app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-    />
-    <Button
-            android:text="Editar nota fiscal"
-            style="@style/button"
-            android:id="@+id/btnEditar"
-            app:layout_constraintTop_toBottomOf="@+id/btnCadastrar" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-    />
+            android:layout_width="0dp" android:layout_marginTop="8dp"
+            app:layout_constraintHorizontal_bias="0.574" app:layout_constraintTop_toBottomOf="@+id/btnListar"/>
     <Button
             android:text="listar nota fiscal"
             style="@style/button"
@@ -30,16 +24,17 @@
             app:layout_constraintStart_toStartOf="parent"
     />
     <Button
-            android:text="apagar nota fiscal"
-            style="@style/button"
-            android:id="@+id/btnApagar"
-            app:layout_constraintTop_toBottomOf="@+id/btnListar" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-    />
-    <Button
             android:text="Sair"
             style="@style/button"
             android:id="@+id/btnSair" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
+    <Button
+            android:text="Sobre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnSobre"
+            app:layout_constraintTop_toBottomOf="@+id/btnCadastrar" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+    />
 </android.support.constraint.ConstraintLayout>

@@ -20,5 +20,14 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent( this, ListActivity::class.java)
             startActivity(intent)
         }
+
+        btnSobre.setOnClickListener {
+            val intent = Intent(this, AboutActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnSair.setOnClickListener {
+            this.finishAndRemoveTask()
+        }
     }
 }

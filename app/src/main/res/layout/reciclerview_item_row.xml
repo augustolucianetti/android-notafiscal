@@ -52,8 +52,8 @@
     <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@android:drawable/ic_menu_edit"
-            android:layout_alignParentEnd="true" android:layout_marginEnd="117dp"
-            android:layout_alignTop="@+id/textView4" android:id="@+id/ibtnEditar"/>
+            android:layout_alignParentEnd="true" android:layout_marginEnd="20dp"
+            android:layout_alignTop="@+id/textView4" android:id="@+id/ibtnEditar" android:layout_marginTop="-2dp"/>
     <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@android:drawable/ic_menu_delete"
