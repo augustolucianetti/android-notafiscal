@@ -1,16 +1,20 @@
 package augustolucianetti.com.br.notafiscalapplication
 
+import android.app.Activity
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.OrientationHelper
 import android.support.v7.widget.RecyclerView
 import android.view.View
+import android.widget.Toast
 import augustolucianetti.com.br.notafiscalapplication.model.NotaFiscal
 import com.firebase.ui.database.FirebaseRecyclerAdapter
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.DatabaseReference
 import kotlinx.android.synthetic.main.activity_list.*
+import kotlinx.android.synthetic.main.reciclerview_item_row.*
 import kotlinx.android.synthetic.main.reciclerview_item_row.view.*
 
 
@@ -26,10 +30,10 @@ class ListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list)
 
-        if (FirebaseDatabase.getInstance() == null) {
+        /*if (FirebaseDatabase.getInstance() == null) {
             FirebaseDatabase.getInstance().setPersistenceEnabled(true);
             //vai permitir trabalhar offline.
-        }
+        }*/
         //definindo o nome da - colecao
         tabela = FirebaseDatabase.getInstance().getReference("notaFiscal")
 
@@ -54,6 +58,30 @@ class ListActivity : AppCompatActivity() {
                     viewHolder?.itemView?.tvEntradaSaida?.text = "Saída"
                 } else {
                     viewHolder?.itemView?.tvEntradaSaida?.text = "Entrada"
+                }
+
+                //fazendo botão excluir
+                viewHolder?.itemView?.ibtnDelete?.setOnClickListener {
+                    System.out.println("Nota fiscal:" + position)
+                    System.out.println("tabela" + tabela)
+                    FirebaseDatabase.getInstance().getReference("notaFiscal").child(notaFiscal.id).removeValue().addOnCompleteListener{
+                        if (it.isSuccessful) {
+                            Toast.makeText(this@ListActivity,
+                                "Nota Fiscal excluida com sucesso!", Toast.LENGTH_SHORT).show()
+                        } else {
+                            System.out.println("erro no firebase: " + it.exception)
+                            Toast.makeText(this@ListActivity,
+                                it.exception?.message, Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
+
+                //pogramando botao editar
+                viewHolder!!.itemView.ibtnEditar.setOnClickListener {
+
+                    val intent = Intent(viewHolder.itemView.context, EditActivity::class.java)
+                    intent.putExtra("notaFiscal", notaFiscal)
+                    viewHolder.itemView.context.startActivity(intent)
                 }
             }
         }
