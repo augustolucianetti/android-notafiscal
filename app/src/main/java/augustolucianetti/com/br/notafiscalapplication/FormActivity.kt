@@ -22,24 +22,24 @@ class FormActivity : AppCompatActivity() {
     }
 
     private fun saveInDatabase() {
-        val key = FirebaseDatabase.getInstance().getReference("notaFiscal").push().key.toString()
+        val key = FirebaseDatabase.getInstance().getReference(getString(R.string.nomeTabelaNotaFiscal)).push().key.toString()
         val nota = NotaFiscal( etNumeroEdit.getValue().toInt(), etProdutoEdit.getValue(), etQuanidadeEdit.getValue().toFloat(),
             etValorEdit.getValue().toFloat(), rbEntradaEdit.isChecked, rbSaidaEdit.isChecked, key)
         FirebaseDatabase.getInstance()
-            .getReference("notaFiscal")
+            .getReference(getString(R.string.nomeTabelaNotaFiscal))
             .child(key)
             .setValue(nota)
             .addOnCompleteListener {
 
                 if (it.isSuccessful) {
                     Toast.makeText(this@FormActivity,
-                        "Nota Fiscal cadastrada com sucesso!", Toast.LENGTH_SHORT).show()
+                        getString(R.string.mensagem_nota_fiscal_cadastrada_sucesso), Toast.LENGTH_SHORT).show()
 
                     val intent = Intent()
                     setResult(Activity.RESULT_OK, intent)
                     finish()
                 } else {
-                    System.out.println("erro no firebase: " + it.exception)
+                    System.out.println(getString(R.string.erro_firebase) + it.exception)
                     Toast.makeText(this@FormActivity,
                         it.exception?.message, Toast.LENGTH_SHORT).show()
                 }

@@ -16,8 +16,8 @@ class EditActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_edit)
 
-        val notaFiscal = intent.getSerializableExtra("notaFiscal") as NotaFiscal
-        val tabela = FirebaseDatabase.getInstance().getReference("notaFiscal")
+        val notaFiscal = intent.getSerializableExtra(getString(R.string.nomeTabelaNotaFiscal)) as NotaFiscal
+        val tabela = FirebaseDatabase.getInstance().getReference(getString(R.string.nomeTabelaNotaFiscal))
 
         var chave: String? = null
         if (notaFiscal != null) {
@@ -48,13 +48,13 @@ class EditActivity : AppCompatActivity() {
         tabela.child(chave).setValue(novo).addOnCompleteListener{
             if (it.isSuccessful) {
                 Toast.makeText(this@EditActivity,
-                    "Nota Fiscal editada com sucesso!", Toast.LENGTH_SHORT).show()
+                    getString(R.string.mensagem_nota_fiscal_editada_sucesso), Toast.LENGTH_SHORT).show()
 
                 val intent = Intent(this@EditActivity, ListActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {
-                System.out.println("erro no firebase: " + it.exception)
+                System.out.println(getString(R.string.erro_firebase) + it.exception)
                 Toast.makeText(this@EditActivity,
                     it.exception?.message, Toast.LENGTH_SHORT).show()
             }

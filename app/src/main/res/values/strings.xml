@@ -1,13 +1,38 @@
 <resources>
-    <string name="app_name">NotaFiscalApplication</string>
+    <string name="app_name">TaxNote</string>
     <string name="password">Password</string>
-    <string name="ainda_n_o_tem_conta_crie_uma">Have an account? Create one!</string>
-    <string name="numero_nota">Numero da Nota</string>
-    <string name="nome_produto">Nome do produto</string>
-    <string name="quantidade">Quantidade</string>
-    <string name="valor">Valor</string>
-    <string name="cnpj_fornecedor_cliente">CNPJ Fornecedor/Cliente</string>
-    <string name="entrada">Entrada</string>
-    <string name="saida">Saida</string>
-    <string name="cadstrar_nf">Cadstrar NF</string>
+    <string name="ainda_n_o_tem_conta_crie_uma">Have an account? Criate one</string>
+    <string name="numero_nota">Number of note</string>
+    <string name="nome_produto">Name of product</string>
+    <string name="quantidade">Quantity</string>
+    <string name="valor">Value</string>
+    <string name="cnpj_fornecedor_cliente">CNPJ Provider/CUstomer</string>
+    <string name="entrada">Input</string>
+    <string name="saida">Ouput</string>
+    <string name="cadstrar_nf">Register NF</string>
+    <string name="desenvolvedores">Developers:</string>
+    <string name="nome_lucas_de_souza_morinigo_ra_331854">Name: Lucas de Souza Morinigo RA: 331854</string>
+    <string name="mensagem_nota_fiscal_editada_sucesso">Tax Note edited with success!</string>
+    <string name="erro_firebase">firebase error</string>
+    <string name="nomeTabelaNotaFiscal" translatable="false">notaFiscal</string>
+    <string name="mensagem_nota_fiscal_cadastrada_sucesso">Tax Note refistered with success!</string>
+    <string name="mensagem_nota_fiscal_excluida_sucesso">Tax Note excluded with success!</string>
+    <string name="entrada_saida">Input/Output</string>
+    <string name="email" translatable="false">Email</string>
+    <string name="senha">Password</string>
+    <string name="manteha_me_conectado">Keep-me connected</string>
+    <string name="login" translatable="false">Login</string>
+    <string name="cadastrar_nota_fiscal">Register Tax Note</string>
+    <string name="listar_nota_fiscal">List tax note</string>
+    <string name="sair">Exit</string>
+    <string name="sobre">About</string>
+    <string name="usuario_criado_sucesso">User create with success</string>
+    <string name="nomeTabelaUsuario" translatable="false">Users</string>
+    <string name="novo_usuario">New user</string>
+    <string name="nome">Name</string>
+    <string name="telefone">Phone</string>
+    <string name="crie_uma_conta">Create an account</string>
+    <string name="editar_nf">Edit NF</string>
+    <string name="nome_marcos_vinicius_nascimento_santos_ra_330870">Name: Marcos Vinicius N. Santos: RA: 330870</string>
+    <string name="nome_augusto_lucianetti_ra_330160">Name: Augusto Lucianetti RA: 330160</string>
 </resources>

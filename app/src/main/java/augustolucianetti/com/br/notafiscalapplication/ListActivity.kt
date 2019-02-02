@@ -35,7 +35,7 @@ class ListActivity : AppCompatActivity() {
             //vai permitir trabalhar offline.
         }*/
         //definindo o nome da - colecao
-        tabela = FirebaseDatabase.getInstance().getReference("notaFiscal")
+        tabela = FirebaseDatabase.getInstance().getReference(getString(R.string.nomeTabelaNotaFiscal))
 
         carregarRecyclerView()
         //rvNotaFiscal.adapter = ListAdapter(listOf(), this, {})
@@ -55,21 +55,21 @@ class ListActivity : AppCompatActivity() {
                 viewHolder?.itemView?.tvNomeProduto?.text = notaFiscal?.nomeProduto.toString()
                 viewHolder?.itemView?.tvQuantidade?.text = notaFiscal?.quantidade.toString()
                 if (notaFiscal!!.entrada) {
-                    viewHolder?.itemView?.tvEntradaSaida?.text = "Saída"
+                    viewHolder?.itemView?.tvEntradaSaida?.text = getString(R.string.saida)
                 } else {
-                    viewHolder?.itemView?.tvEntradaSaida?.text = "Entrada"
+                    viewHolder?.itemView?.tvEntradaSaida?.text = getString(R.string.entrada)
                 }
 
                 //fazendo botão excluir
                 viewHolder?.itemView?.ibtnDelete?.setOnClickListener {
                     System.out.println("Nota fiscal:" + position)
                     System.out.println("tabela" + tabela)
-                    FirebaseDatabase.getInstance().getReference("notaFiscal").child(notaFiscal.id).removeValue().addOnCompleteListener{
+                    FirebaseDatabase.getInstance().getReference(getString(R.string.nomeTabelaNotaFiscal)).child(notaFiscal.id).removeValue().addOnCompleteListener{
                         if (it.isSuccessful) {
                             Toast.makeText(this@ListActivity,
-                                "Nota Fiscal excluida com sucesso!", Toast.LENGTH_SHORT).show()
+                                getString(R.string.mensagem_nota_fiscal_excluida_sucesso), Toast.LENGTH_SHORT).show()
                         } else {
-                            System.out.println("erro no firebase: " + it.exception)
+                            System.out.println(getString(R.string.erro_firebase) + it.exception)
                             Toast.makeText(this@ListActivity,
                                 it.exception?.message, Toast.LENGTH_SHORT).show()
                         }
@@ -82,6 +82,7 @@ class ListActivity : AppCompatActivity() {
                     val intent = Intent(viewHolder.itemView.context, EditActivity::class.java)
                     intent.putExtra("notaFiscal", notaFiscal)
                     viewHolder.itemView.context.startActivity(intent)
+                    this@ListActivity.finish()
                 }
             }
         }

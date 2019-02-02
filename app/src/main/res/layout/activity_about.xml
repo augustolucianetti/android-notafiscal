@@ -8,35 +8,39 @@
         tools:context="augustolucianetti.com.br.notafiscalapplication.AboutActivity">
 
     <TextView
-            android:text="Desenvolvedores:"
+            android:text="@string/desenvolvedores"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/tvTitulo"
+            style="@style/textView"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:textSize="18sp"
             android:textStyle="bold"/>
     <TextView
-            android:text="Nome: Augusto Lucianetti RA: 330160"
+            android:text="@string/nome_augusto_lucianetti_ra_330160"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/textView2"
+            style="@style/textView"
             app:layout_constraintTop_toBottomOf="@+id/tvTitulo" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
     />
     <TextView
-            android:text="Nome: Marcos RA:"
+            android:text="@string/nome_marcos_vinicius_nascimento_santos_ra_330870"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/textView3"
+            style="@style/textView"
             app:layout_constraintTop_toBottomOf="@+id/textView2" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
     />
     <TextView
-            android:text="Nome: Lucas RA:"
+            android:text="@string/nome_lucas_de_souza_morinigo_ra_331854"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/textView5"
+            style="@style/textView"
             app:layout_constraintTop_toBottomOf="@+id/textView3" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
     />

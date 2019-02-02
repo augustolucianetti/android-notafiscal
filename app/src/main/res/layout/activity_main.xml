@@ -8,7 +8,7 @@
         tools:context="augustolucianetti.com.br.notafiscalapplication.MainActivity">
 
     <Button
-            android:text="Cadastrar Nota Fiscal"
+            android:text="@string/cadastrar_nota_fiscal"
 
             android:id="@+id/btnCadastrar"
             style="@style/button"
@@ -17,23 +17,24 @@
             android:layout_width="0dp" android:layout_marginTop="8dp"
             app:layout_constraintHorizontal_bias="0.574" app:layout_constraintTop_toBottomOf="@+id/btnListar"/>
     <Button
-            android:text="listar nota fiscal"
+            android:text="@string/listar_nota_fiscal"
             style="@style/button"
             android:id="@+id/btnListar"
-            app:layout_constraintTop_toBottomOf="@+id/btnEditar" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-    />
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="8dp"/>
     <Button
-            android:text="Sair"
+            android:text="@string/sair"
             style="@style/button"
             android:id="@+id/btnSair" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"/>
     <Button
-            android:text="Sobre"
+            android:text="@string/sobre"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnSobre"
+            style="@style/button"
             app:layout_constraintTop_toBottomOf="@+id/btnCadastrar" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
     />

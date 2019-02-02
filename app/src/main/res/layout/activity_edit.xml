@@ -69,10 +69,11 @@
                 android:layout_height="wrap_content" android:id="@+id/rbSaidaEdit" android:layout_weight="1"/>
     </RadioGroup>
     <Button
-            android:text="Button"
+            android:text="@string/editar_nf"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/btnEditar"
+            style="@style/button"
             app:layout_constraintTop_toBottomOf="@+id/radioGroupEdit" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
     />

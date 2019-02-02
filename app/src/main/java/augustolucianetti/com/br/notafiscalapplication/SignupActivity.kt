@@ -36,21 +36,21 @@ class SignupActivity : AppCompatActivity() {
     private fun saveInDatabase() {
         val user = User(inputName.getValue(), inputEmail.getValue(), inputPhone.getValue())
         FirebaseDatabase.getInstance()
-                .getReference("Users")
+                .getReference(getString(R.string.nomeTabelaUsuario))
                 .child(FirebaseAuth.getInstance().currentUser!!.uid)
                 .setValue(user)
                 .addOnCompleteListener {
 
                     if (it.isSuccessful) {
                         Toast.makeText(this@SignupActivity,
-                                "Usuario criado com sucesso!", Toast.LENGTH_SHORT).show()
+                                getString(R.string.usuario_criado_sucesso), Toast.LENGTH_SHORT).show()
 
                         val intent = Intent()
                         intent.putExtra("email", inputEmail.getValue())
                         setResult(Activity.RESULT_OK, intent)
                         finish()
                     } else {
-                        System.out.println("erro no firebase: " + it.exception)
+                        System.out.println(getString(R.string.erro_firebase) + it.exception)
                         Toast.makeText(this@SignupActivity,
                                 it.exception?.message, Toast.LENGTH_SHORT).show()
                     }

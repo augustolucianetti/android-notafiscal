@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">NotaFiscalApplication</string>
+    <string name="app_name">NotaFiscal</string>
     <string name="password">Senha</string>
     <string name="ainda_n_o_tem_conta_crie_uma">Ainda não tem conta? Creie uma!</string>
+    <string name="numero_nota">Numero da Nota</string>
+    <string name="nome_produto">Nome do produto</string>
+    <string name="quantidade">Quantidade</string>
+    <string name="valor">Valor</string>
+    <string name="cnpj_fornecedor_cliente">CNPJ Fornecedor/Cliente</string>
+    <string name="entrada">Entrada</string>
+    <string name="saida">Saida</string>
+    <string name="cadstrar_nf">Cadstrar NF</string>
+    <string name="desenvolvedores">Desenvolvedores:</string>
+    <string name="nome_marcos_vinicius_nascimento_santos_ra_330870">"Nome: Marcos Vinicius N. Santos RA: 330870"
+    </string>
+    <string name="nome_lucas_de_souza_morinigo_ra_331854">Nome: Lucas de Souza Morinigo RA: 331854</string>
+    <string name="mensagem_nota_fiscal_editada_sucesso">Nota Fiscal editada com sucesso!</string>
+    <string name="erro_firebase">erro no firebase:</string>
+    <string name="mensagem_nota_fiscal_cadastrada_sucesso">Nota Fiscal cadastrada com sucesso!</string>
+    <string name="mensagem_nota_fiscal_excluida_sucesso">Nota Fiscal excluida com sucesso!</string>
+    <string name="entrada_saida">Entrada/Saida</string>
+    <string name="senha">Senha</string>
+    <string name="manteha_me_conectado">Manteha-me conectado</string>
+    <string name="cadastrar_nota_fiscal">Cadastrar Nota Fiscal</string>
+    <string name="listar_nota_fiscal">listar nota fiscal</string>
+    <string name="sair">Sair</string>
+    <string name="sobre">Sobre</string>
+    <string name="usuario_criado_sucesso">Usuario criado com sucesso!</string>
+    <string name="novo_usuario">Novo usuaário</string>
+    <string name="nome">Nome</string>
+    <string name="telefone">Telefone</string>
+    <string name="crie_uma_conta">Crie uma conta</string>
+    <string name="editar_nf">Editar NF</string>
+    <string name="nome_augusto_lucianetti_ra_330160">Nome: Augusto Lucianetti RA: 330160</string>
 </resources>
