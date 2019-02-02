@@ -34,4 +34,7 @@
     <string name="editar_nf">Editar NF</string>
     <string name="nome_augusto_lucianetti_ra_330160">Nome: Augusto Lucianetti RA: 330160</string>
     <string name="armazenagem">Armazenagem</string>
+    <string name="atencao">Atenção</string>
+    <string name="mensagem_nao_tem_nota">Nenhuma nota fiscal cadastrada ainda!</string>
+    <string name="mensagem_confirmaar_exclusao_nota_fiscal">Realmente deseja excluir a nota fiscal?</string>
 </resources>
