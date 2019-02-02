@@ -60,13 +60,17 @@
             android:id="@+id/radioGroupEdit">
         <RadioButton
                 android:text="@string/entrada"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
 
                 android:layout_height="wrap_content" android:id="@+id/rbEntradaEdit" android:layout_weight="1"/>
         <RadioButton
                 android:text="@string/saida"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/rbSaidaEdit" android:layout_weight="1"/>
+        <RadioButton
+                android:text="Armazenagem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/rbArmazenagemEdit" android:layout_weight="1"/>
     </RadioGroup>
     <Button
             android:text="@string/editar_nf"

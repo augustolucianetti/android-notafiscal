@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Toast
 import augustolucianetti.com.br.notafiscalapplication.model.NotaFiscal
 import br.com.augustolucianetti.calculaflex.extention.getValue
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_form.*
 
@@ -24,7 +25,8 @@ class FormActivity : AppCompatActivity() {
     private fun saveInDatabase() {
         val key = FirebaseDatabase.getInstance().getReference(getString(R.string.nomeTabelaNotaFiscal)).push().key.toString()
         val nota = NotaFiscal( etNumeroEdit.getValue().toInt(), etProdutoEdit.getValue(), etQuanidadeEdit.getValue().toFloat(),
-            etValorEdit.getValue().toFloat(), rbEntradaEdit.isChecked, rbSaidaEdit.isChecked, key)
+            etValorEdit.getValue().toFloat(), rbEntradaEdit.isChecked, rbSaidaEdit.isChecked, rbArmazenagem.isChecked, etFornecedorCliente.getValue(), key,
+            FirebaseAuth.getInstance().currentUser!!.uid)
         FirebaseDatabase.getInstance()
             .getReference(getString(R.string.nomeTabelaNotaFiscal))
             .child(key)

@@ -48,25 +48,29 @@
             android:layout_height="wrap_content"
             android:inputType="number"
             android:ems="10"
-            android:id="@+id/etFornecedorClienteEdit"
+            android:id="@+id/etFornecedorCliente"
             app:layout_constraintTop_toBottomOf="@+id/etValorEdit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" android:hint="@string/cnpj_fornecedor_cliente"/>
     <RadioGroup
             android:layout_width="0dp"
-            android:layout_height="50dp"
-            app:layout_constraintTop_toBottomOf="@+id/etFornecedorClienteEdit" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_height="60dp"
+            app:layout_constraintTop_toBottomOf="@+id/etFornecedorCliente" app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:id="@+id/radioGroupEdit">
         <RadioButton
                 android:text="@string/entrada"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
 
                 android:layout_height="wrap_content" android:id="@+id/rbEntradaEdit" android:layout_weight="1"/>
         <RadioButton
                 android:text="@string/saida"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" android:id="@+id/rbSaidaEdit" android:layout_weight="1"/>
+        <RadioButton
+                android:text="@string/armazenagem"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:id="@+id/rbArmazenagem" android:layout_weight="1"/>
     </RadioGroup>
     <Button
             android:text="@string/cadstrar_nf"

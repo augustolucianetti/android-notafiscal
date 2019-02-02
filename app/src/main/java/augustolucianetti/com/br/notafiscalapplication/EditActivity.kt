@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Toast
 import augustolucianetti.com.br.notafiscalapplication.model.NotaFiscal
 import br.com.augustolucianetti.calculaflex.extention.getValue
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.activity_edit.*
@@ -25,6 +26,10 @@ class EditActivity : AppCompatActivity() {
             etProdutoEdit.setText(notaFiscal.nomeProduto)
             etQuanidadeEdit.setText(notaFiscal.quantidade.toString())
             etValorEdit.setText(notaFiscal.valor.toString())
+            etFornecedorClienteEdit.setText(notaFiscal.cnpjFornecedorCliente)
+            rbEntradaEdit.isChecked = notaFiscal.entrada
+            rbSaidaEdit.isChecked = notaFiscal.saida
+            rbArmazenagemEdit.isChecked = notaFiscal.armazenagem
             chave = notaFiscal.id
         }
 
@@ -44,6 +49,8 @@ class EditActivity : AppCompatActivity() {
         novo.id = chave
         novo.entrada = rbEntradaEdit.isChecked
         novo.saida = rbSaidaEdit.isChecked
+        novo.armazenagem = rbArmazenagemEdit.isChecked
+        novo.userId = FirebaseAuth.getInstance().currentUser!!.uid
 
         tabela.child(chave).setValue(novo).addOnCompleteListener{
             if (it.isSuccessful) {
