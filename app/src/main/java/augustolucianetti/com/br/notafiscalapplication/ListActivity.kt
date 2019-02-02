@@ -90,7 +90,7 @@ class ListActivity : AppCompatActivity() {
                                 val builderExcluir = AlertDialog.Builder(this@ListActivity)
                                 builderExcluir.setTitle(getString(R.string.atencao))
                                 builderExcluir.setMessage(getString(R.string.mensagem_nota_fiscal_excluida_sucesso))
-                                builder.setPositiveButton(getString(R.string.ok)) {dialogExcluir, witch ->
+                                builderExcluir.setPositiveButton(getString(R.string.ok)) {dialogExcluir, witch ->
 
                                 }
 
