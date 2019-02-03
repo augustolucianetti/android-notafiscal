@@ -37,4 +37,5 @@
     <string name="atencao">Atenção</string>
     <string name="mensagem_nao_tem_nota">Nenhuma nota fiscal cadastrada ainda!</string>
     <string name="mensagem_confirmaar_exclusao_nota_fiscal">Realmente deseja excluir a nota fiscal?</string>
+    <string name="olah">"Olá, "</string>
 </resources>

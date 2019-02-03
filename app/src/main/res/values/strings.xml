@@ -40,4 +40,5 @@
     <string name="mensagem_nao_tem_nota">Noone tax note refistred yet!</string>
     <string name="ok" translatable="false">OK</string>
     <string name="mensagem_confirmaar_exclusao_nota_fiscal">Really wish exclude the tax note?</string>
+    <string name="olah">"Hello, "</string>
 </resources>
