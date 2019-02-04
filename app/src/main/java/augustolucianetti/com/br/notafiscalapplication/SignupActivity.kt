@@ -40,7 +40,7 @@ class SignupActivity : AppCompatActivity() {
     }
 
     private fun saveInDatabase() {
-        val user = User(inputName.getValue(), inputEmail.getValue(), inputPhone.getValue())
+        val user = User(inputName.getValue(), inputEmail.getValue(), inputPhone.getValue(), FirebaseAuth.getInstance().currentUser!!.uid)
         FirebaseDatabase.getInstance()
                 .getReference(getString(R.string.nomeTabelaUsuario))
                 .child(FirebaseAuth.getInstance().currentUser!!.uid)

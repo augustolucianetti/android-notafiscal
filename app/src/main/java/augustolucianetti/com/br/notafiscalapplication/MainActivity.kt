@@ -1,5 +1,6 @@
 package augustolucianetti.com.br.notafiscalapplication
 
+import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -47,6 +48,17 @@ class MainActivity : AppCompatActivity() {
 
         btnSair.setOnClickListener {
             this.finishAndRemoveTask()
+        }
+
+        btLogout.setOnClickListener {
+            val preferences = getSharedPreferences("manterConectado", Context.MODE_PRIVATE)
+            val editor = preferences.edit()
+            editor.putBoolean("manterConectado", false)
+            editor.apply()
+            FirebaseAuth.getInstance().signOut()
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }
