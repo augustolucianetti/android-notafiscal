@@ -1,6 +1,7 @@
 package augustolucianetti.com.br.notafiscalapplication
 
 import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -34,16 +35,25 @@ class FormActivity : AppCompatActivity() {
             .addOnCompleteListener {
 
                 if (it.isSuccessful) {
-                    Toast.makeText(this@FormActivity,
-                        getString(R.string.mensagem_nota_fiscal_cadastrada_sucesso), Toast.LENGTH_SHORT).show()
 
-                    val intent = Intent()
-                    setResult(Activity.RESULT_OK, intent)
-                    finish()
+                    val builder = AlertDialog.Builder(this@FormActivity)
+                    builder.setMessage(getString(R.string.mensagem_nota_fiscal_cadastrada_sucesso))
+                    builder.setPositiveButton(getString(R.string.ok)) {dialog, which ->
+                        val intent = Intent()
+                        setResult(Activity.RESULT_OK, intent)
+                        finish()
+                    }
+                    val dialog = builder.create()
+                    dialog.show()
                 } else {
+                    val builder = AlertDialog.Builder(this@FormActivity)
+                    builder.setMessage(it.exception?.message)
+                    builder.setPositiveButton(getString(R.string.ok)) {dialog, which ->
+
+                    }
+                    val dialog = builder.create()
+                    dialog.show()
                     System.out.println(getString(R.string.erro_firebase) + it.exception)
-                    Toast.makeText(this@FormActivity,
-                        it.exception?.message, Toast.LENGTH_SHORT).show()
                 }
             }
     }

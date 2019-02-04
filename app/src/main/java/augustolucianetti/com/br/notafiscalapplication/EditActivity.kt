@@ -3,6 +3,7 @@ package augustolucianetti.com.br.notafiscalapplication
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.widget.Toast
 import augustolucianetti.com.br.notafiscalapplication.model.NotaFiscal
 import br.com.augustolucianetti.calculaflex.extention.getValue
@@ -54,16 +55,26 @@ class EditActivity : AppCompatActivity() {
 
         tabela.child(chave).setValue(novo).addOnCompleteListener{
             if (it.isSuccessful) {
-                Toast.makeText(this@EditActivity,
-                    getString(R.string.mensagem_nota_fiscal_editada_sucesso), Toast.LENGTH_SHORT).show()
+                val builder = AlertDialog.Builder(this@EditActivity)
+                builder.setMessage(getString(R.string.mensagem_nota_fiscal_editada_sucesso))
+                builder.setPositiveButton(getString(R.string.ok)) {dialog, which ->
 
-                val intent = Intent(this@EditActivity, ListActivity::class.java)
-                startActivity(intent)
-                finish()
+                    val intent = Intent(this@EditActivity, ListActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+                val dialog = builder.create()
+                dialog.show()
             } else {
+                val builder = AlertDialog.Builder(this@EditActivity)
+                builder.setTitle(getString(R.string.atencao))
+                builder.setMessage(it.exception?.message)
+                builder.setPositiveButton(getString(R.string.ok)) {dialog, which ->
+
+                }
+                val dialog = builder.create()
+                dialog.show()
                 System.out.println(getString(R.string.erro_firebase) + it.exception)
-                Toast.makeText(this@EditActivity,
-                    it.exception?.message, Toast.LENGTH_SHORT).show()
             }
         }
     }
