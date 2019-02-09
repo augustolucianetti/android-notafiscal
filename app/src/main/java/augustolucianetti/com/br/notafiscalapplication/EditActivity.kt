@@ -52,6 +52,7 @@ class EditActivity : AppCompatActivity() {
         novo.saida = rbSaidaEdit.isChecked
         novo.armazenagem = rbArmazenagemEdit.isChecked
         novo.userId = FirebaseAuth.getInstance().currentUser!!.uid
+        novo.cnpjFornecedorCliente = etFornecedorClienteEdit.getValue()
 
         tabela.child(chave).setValue(novo).addOnCompleteListener{
             if (it.isSuccessful) {
